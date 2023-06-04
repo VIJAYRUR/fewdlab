@@ -1,0 +1,173 @@
+To convert the provided HTML code into a React application, you would need to create separate components for each section and utilize React Router for navigation. Here's an example of how you can structure the React components and set up routing:
+
+First, install the necessary dependencies:
+
+```
+npm install react react-dom react-router-dom
+```
+
+Then, create the following component files:
+
+**App.js:**
+
+```jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import PageNotFound from './components/PageNotFound';
+
+const App = () => {
+  return (
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route component={PageNotFound} />
+      </Switch>
+    </Router>
+  );
+};
+
+export default App;
+```
+
+**components/Home.js:**
+
+```jsx
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div>
+      <h2>About Me</h2>
+      <br />
+      <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1331&q=80" alt="Profile Image" />
+      <p>Write something about yourself here.</p>
+    </div>
+  );
+};
+
+export default Home;
+```
+
+**components/About.js:**
+
+```jsx
+import React from 'react';
+
+const About = () => {
+  return (
+    <div>
+      <h2>Education</h2>
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <th>Year Studied</th>
+            <th>Educational Institute</th>
+            <th>CGPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2015-2019</td>
+            <td>ABC University</td>
+            <td>3.8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default About;
+```
+
+**components/Contact.js:**
+
+```jsx
+import React from 'react';
+
+const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const subject = formData.get('subject');
+    const description = formData.get('description');
+    console.log('Subject:', subject);
+    console.log('Description:', description);
+    e.target.reset();
+  };
+
+  return (
+    <div>
+      <h2>Contact Me</h2>
+      <br />
+      <form onSubmit={handleSubmit}>
+        <label>
+          Subject:
+          <input type="text" name="subject" />
+        </label>
+        <br />
+        <label>
+          Description:
+          <textarea name="description" />
+        </label
+
+>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default Contact;
+```
+
+**components/PageNotFound.js:**
+
+```jsx
+import React from 'react';
+
+const PageNotFound = () => {
+  return <h2>404 - Page Not Found</h2>;
+};
+
+export default PageNotFound;
+```
+
+Finally, in your `index.js` file, render the `App` component:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+With these changes, you'll have a React application that renders the navigation links in the `nav` element and displays the corresponding components based on the selected link. The `Contact` component handles form submission and logs the form data to the console.
+
+Remember to update the necessary file imports and paths as per your project structure.
