@@ -1,0 +1,114 @@
+Sure! Here's an example of a React application with multiple components (Home, About Us, Contact Us, Page Not Found) and routing using React Router:
+
+First, make sure to install React Router by running the following command in your project directory:
+
+```bash
+npm install react-router-dom
+```
+
+Then, you can create the following components and set up the routing:
+
+1. Create a `Navbar` component:
+```jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Navbar() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About Us</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact Us</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+export default Navbar;
+```
+
+2. Create a `Home` component:
+```jsx
+import React from 'react';
+
+function Home() {
+  return <h2>Home</h2>;
+}
+
+export default Home;
+```
+
+3. Create an `About` component:
+```jsx
+import React from 'react';
+
+function About() {
+  return <h2>About Us</h2>;
+}
+
+export default About;
+```
+
+4. Create a `Contact` component:
+```jsx
+import React from 'react';
+
+function Contact() {
+  return <h2>Contact Us</h2>;
+}
+
+export default Contact;
+```
+
+5. Create a `PageNotFound` component:
+```jsx
+import React from 'react';
+
+function PageNotFound() {
+  return <h2>Page Not Found</h2>;
+}
+
+export default PageNotFound;
+```
+
+6. Set up routing in your `App.js` file:
+```jsx
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+import PageNotFound from './PageNotFound';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route component={PageNotFound} />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+In this example, we use the `BrowserRouter` from React Router to handle the routing. The `Navbar` component contains links to different routes. The `Switch` component is used to render the appropriate component based on the route.
+
+Now you can navigate between the different components (Home, About Us, Contact Us) using the links in the `Navbar`. If an invalid route is entered, the `PageNotFound` component will be displayed.
+
+Make sure to import the necessary components and include the `App` component in your root file (e.g., `index.js`) to render the application.
+
+Note: Don't forget to import the necessary dependencies (`react-router-dom`, `react-router`) in the respective files.

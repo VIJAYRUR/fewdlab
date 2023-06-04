@@ -1,0 +1,32 @@
+import React, { useState, useMemo } from 'react';
+
+function FactorialCalculator() {
+  const [number, setNumber] = useState(0);
+
+  const factorial = useMemo(() => {
+    let result = 1;
+    for (let i = 1; i <= number; i++) {
+      result *= i;
+    }
+    return result;
+  }, [number]);
+
+  const handleChange = (event) => {
+    setNumber(Number(event.target.value));
+  };
+
+  return (
+    <div>
+      <h1>Factorial Calculator</h1>
+      <label>
+        Enter a number:
+        <input type="number" value={number} onChange={handleChange} />
+      </label>
+      <p>
+        Factorial of {number} is: <strong>{factorial}</strong>
+      </p>
+    </div>
+  );
+}
+
+export default FactorialCalculator;

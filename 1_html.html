@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact Me</a></li> <!-- Added contact link -->
+        </ul>
+    </nav>
+
+    <div id="aboutme">
+        <h1>About Me</h1>
+        <p>Write something about yourself here.</p>
+    </div>
+
+    <div id="education">
+        <h2>Education</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year Studied</th>
+                    <th>Educational Institute</th>
+                    <th>CGPA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015-2019</td>
+                    <td>ABC University</td>
+                    <td>3.8</td>
+                </tr>
+                <!-- Add more rows for additional education details -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li>
+                <strong>Company Name</strong><br>
+                <em>Role</em><br>
+                Location<br>
+                Description of your experience at the company.
+            </li>
+            <!-- Add more list items for additional experiences -->
+        </ul>
+    </div>
+
+    <div id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+            <!-- Add more skills here -->
+        </ul>
+    </div>
+
+    <div id="contact"> <!-- Added Contact Me section -->
+        <h2>Contact Me</h2>
+        <form>
+            <label>
+                Subject:
+                <input type="text" name="subject" />
+            </label>
+            <br />
+            <label>
+                Description:
+                <textarea name="description"></textarea>
+            </label>
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

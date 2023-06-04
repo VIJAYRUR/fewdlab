@@ -1,0 +1,43 @@
+import React, { createContext, useState, useContext } from 'react';
+
+// Create the CollegeCodeContext
+const CollegeCodeContext = createContext('');
+
+// Parent component
+const ParentComponent = () => {
+  const [collegeCode, setCollegeCode] = useState('');
+
+  const handleUpdateCode = () => {
+    setCollegeCode('12345');
+  };
+
+  return (
+    <div>
+      <h2>College Code: {collegeCode}</h2>
+      <button onClick={handleUpdateCode}>Update Code</button>
+      <ChildComponent />
+    </div>
+  );
+};
+
+// Child component
+const ChildComponent = () => {
+  const collegeCode = useContext(CollegeCodeContext);
+
+  return (
+    <div>
+      <h2>College Code in Child: {collegeCode}</h2>
+    </div>
+  );
+};
+
+// App component
+const App = () => {
+  return (
+    <CollegeCodeContext.Provider value={'ABCDE'}>
+      <ParentComponent />
+    </CollegeCodeContext.Provider>
+  );
+};
+
+export default App;

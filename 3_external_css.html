@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #aboutme {
+            padding: 50px;
+        }
+
+        #aboutme img {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        #education {
+            padding: 50px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #experience {
+            padding: 50px;
+        }
+
+        #skills {
+            padding: 50px;
+        }
+
+        #contact {
+            padding: 50px;
+        }
+
+        #contact input[type="text"],
+        #contact textarea,
+        #contact button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #contact button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <div id="aboutme">
+        <h2>About Me</h2>
+        <br></br>
+        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1331&q=80" alt="Profile Image">
+        <p>Write something about yourself here.</p>
+    </div>
+
+    <div id="education">
+        <h2>Education</h2>
+        <br></br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year Studied</th>
+                    <th>Educational Institute</th>
+                    <th>CGPA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015-2019</td>
+                    <td>ABC University</td>
+                    <td>3.8</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="experience">
+        <h2>Experience</h2>
+        <br></br>
+        <ul>
+            <li>
+                <strong>Company Name</strong><br>
+                <em>Role</em><br>
+                Location<br>
+                Description of your experience at the company.
+            </li>
+        </ul>
+    </div>
+
+    <div id="skills">
+        <h2>Skills</h2>
+        <br></br>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+        </ul>
+    </div>
+
+    <div id="contact">
+        <h2>Contact Me</h2>
+        <br></br>
+        <form>
+            <label>
+                Subject:
+                <input type="text" name="subject" />
+            </label>
+            <br />
+            <label>
+                Description:
+                <textarea name="description"></textarea>
+            </label>
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
